@@ -1,0 +1,49 @@
+
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "removeComments": true,
+    "incremental": true,
+    "tsBuildInfoFile": "./",
+    "preserveValueImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowUnreachableCode": false,
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "isolatedModules": true,
+    "declaration": true,
+    "sourceMap": true,
+    "module": "ES2020",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "target": "ES2020",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "lib": [
+       "DOM.Iterable",
+      "ES2020",
+      "DOM",
+      "ScriptHost"
+    ]
+  },
+  "types": ["@types/react", "@types/react-dom"],
+  "paths": {
+    "@/*": [
+      "./src/*"
+    ]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/.*/",
+    "src/**/*.test.ts",
+    "src/views/**"
+  ]
+}
