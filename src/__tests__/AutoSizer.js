@@ -17,7 +17,7 @@ function render(markup) {
   return ReactDOM.render(markup, render._mountNode);
 }
 
-render.unmount = function() {
+render.unmount = function () {
   if (render._mountNode) {
     ReactDOM.unmountComponentAtNode(render._mountNode);
 
@@ -149,10 +149,10 @@ describe('AutoSizer', () => {
     trigger.dispatchEvent(new Event('scroll'));
 
     // Allow requestAnimationFrame to be invoked before continuing
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise((resolve) => setTimeout(resolve, 100));
   }
 
-  it('should update :height after a resize event', async done => {
+  it('should update :height after a resize event', async (done) => {
     const rendered = findDOMNode(
       render(
         getMarkup({
@@ -170,7 +170,7 @@ describe('AutoSizer', () => {
   });
 
   describe('onResize and (re)render', () => {
-    it('should trigger when size changes', async done => {
+    it('should trigger when size changes', async (done) => {
       const onResize = jest.fn();
       const ChildComponent = jest
         .fn()
@@ -193,7 +193,7 @@ describe('AutoSizer', () => {
       done();
     });
 
-    it('should only trigger when height changes for disableWidth == true', async done => {
+    it('should only trigger when height changes for disableWidth == true', async (done) => {
       const onResize = jest.fn();
       const ChildComponent = jest
         .fn()
@@ -220,7 +220,7 @@ describe('AutoSizer', () => {
       done();
     });
 
-    it('should only trigger when width changes for disableHeight == true', async done => {
+    it('should only trigger when width changes for disableHeight == true', async (done) => {
       const onResize = jest.fn();
       const ChildComponent = jest
         .fn()

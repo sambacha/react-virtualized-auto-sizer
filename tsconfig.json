@@ -1,4 +1,3 @@
-
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
@@ -11,34 +10,29 @@
     "preserveValueImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "allowJs": true,
     "allowUnreachableCode": false,
-    "strictPropertyInitialization": true,
+    "strictPropertyInitialization": false,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "isolatedModules": true,
     "declaration": true,
     "sourceMap": true,
-    "module": "ES2020",
-    "jsx": "react",
+    "module": "es2015",
+    "jsx": "react-jsx",
     "moduleResolution": "node",
-    "target": "ES2020",
+    "target": "es2015",
     "rootDir": "./src",
     "outDir": "./dist",
+    "types": ["@types/react"],
     "lib": [
-       "DOM.Iterable",
-      "ES2020",
-      "DOM",
-      "ScriptHost"
-    ]
-  },
-  "types": ["@types/react", "@types/react-dom"],
-  "paths": {
-    "@/*": [
-      "./src/*"
+      "ES2015",
+      "dom"
     ]
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*"
   ],
   "exclude": [
     "**/node_modules",
