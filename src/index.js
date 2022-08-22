@@ -50,14 +50,22 @@ type DetectElementResize = {
 };
 
 export default class AutoSizer extends React.PureComponent<Props, State> {
-  static defaultProps = {
+  static defaultProps: {
+  disableHeight: boolean,
+  disableWidth: boolean,
+  onResize: () => void,
+  style: { ... },
+  ...
+} = {
     onResize: () => {},
     disableHeight: false,
     disableWidth: false,
     style: {},
   };
 
-  state = {
+  
+  state: State = {
+    
     height: this.props.defaultHeight || 0,
     width: this.props.defaultWidth || 0,
   };
@@ -102,7 +110,7 @@ export default class AutoSizer extends React.PureComponent<Props, State> {
     }
   }
 
-  render() {
+  render(): React$Element<"div"> {
     const {
       children,
       className,
@@ -152,7 +160,7 @@ export default class AutoSizer extends React.PureComponent<Props, State> {
     );
   }
 
-  _onResize = () => {
+  _onResize: (() => void) = () => {
     const { disableHeight, disableWidth, onResize } = this.props;
 
     if (this._parentNode) {
@@ -186,7 +194,7 @@ export default class AutoSizer extends React.PureComponent<Props, State> {
     }
   };
 
-  _setRef = (autoSizer: ?HTMLElement) => {
+  _setRef: ((autoSizer: ?HTMLElement) => void) = (autoSizer: ?HTMLElement) => {
     this._autoSizer = autoSizer;
   };
 }
